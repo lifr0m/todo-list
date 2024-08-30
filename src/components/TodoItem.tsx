@@ -2,6 +2,7 @@ import { Dispatch, FC, SetStateAction, useRef } from 'react'
 import { ITask } from '@/shared/types/task'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
+import clsx from 'clsx'
 
 type IParams = {
   task: ITask
@@ -29,15 +30,15 @@ export const TodoItem: FC<IParams> = ({ task, isLast, setTasks }) => {
   }
 
   return (
-    <div>
+    <>
       <div className='flex justify-between'>
         <span
           ref={textRef}
-          className={task.isCompleted ? 'text-muted-foreground' : undefined}
+          className={clsx(task.isCompleted && 'text-muted-foreground', 'mr-4')}
         >
           {task.text}
         </span>
-        <div>
+        <div className='flex items-center'>
           {!task.isCompleted && (
             <Button className='mr-2' onClick={markDone}>
               Done
@@ -49,7 +50,7 @@ export const TodoItem: FC<IParams> = ({ task, isLast, setTasks }) => {
         </div>
       </div>
       {!isLast && <Separator className='my-2' />}
-    </div>
+    </>
   )
 }
 

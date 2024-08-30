@@ -1,5 +1,5 @@
 import { FC, Dispatch, SetStateAction } from 'react'
-import { ScrollArea } from '@/components/ui/scroll-area'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { ITask } from '@/shared/types/task'
 import { TodoItem, StubTodoItem } from '@/components/TodoItem'
 
@@ -25,6 +25,7 @@ export const TodoItemList: FC<IParams> = ({ tasks, setTasks }) => {
       ) : (
         <StubTodoItem />
       )}
+      <ScrollBar orientation='horizontal' />
     </ScrollArea>
   )
 }
