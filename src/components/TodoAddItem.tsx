@@ -12,12 +12,13 @@ export const TodoAddItem: FC<IParams> = ({ tasks, setTasks }) => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const addTask = (): void => {
-    if (!inputRef.current!.value) return
+    const text = inputRef.current!.value.trim()
+    
+    if (!text) return
 
-    if (tasks.some((task) => task.text === inputRef.current!.value)) return
+    if (tasks.some((task) => task.text === text)) return
 
     setTasks((prev: ITask[]): ITask[] => {
-      const text = inputRef.current!.value
       inputRef.current!.value = ''
       return [{ text, isCompleted: false }, ...prev]
     })
