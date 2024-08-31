@@ -55,9 +55,5 @@ export const TodoItem: FC<IParams> = ({ task, isLast, setTasks }) => {
 }
 
 export const StubTodoItem: FC = () => {
-  return (
-    <div>
-      <div className='flex justify-center'>No tasks added yet</div>
-    </div>
-  )
+  return <div className='flex justify-center'>No tasks added yet</div>
 }

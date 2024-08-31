@@ -31,14 +31,11 @@ export const TodoAddItem: FC<IParams> = ({ tasks, setTasks }) => {
     <div className='flex mb-4'>
       <Input
         ref={inputRef}
-        type='text'
         placeholder='Enter a task'
         onKeyDown={keyAddTask}
         className='mr-2'
       />
-      <Button type='submit' onClick={addTask}>
-        Add
-      </Button>
+      <Button onClick={addTask}>Add</Button>
     </div>
   )
 }

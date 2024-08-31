@@ -6,7 +6,7 @@ import './App.css'
 
 export const App: FC = () => {
   return (
-    <ThemeProvider storageKey='theme'>
+    <ThemeProvider storageKey='ui-theme'>
       <Header />
       <TodoList />
     </ThemeProvider>
